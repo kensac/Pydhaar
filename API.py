@@ -21,7 +21,7 @@ async def root():
     return {"message": "Base"}
 
 @app.get("/data/{chars}",response_model=AadharOut)
-async def root(chars:int):
+async def getData(chars:int):
     try:
         temp=AadharCard(chars)
         if temp.version != "V2":
