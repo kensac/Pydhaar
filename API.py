@@ -3,7 +3,16 @@ from main import AadharCard
 import json
 from apiClass import *
 
-app = FastAPI()
+description="""An API that allows the user to read data
+ from the new Secure QR Code implmented on the Aadhaar card
+  by the UIDAI. The library has features to deocde the information
+   and provide demographic data. There are also features to verify 
+   user data by taking in the e-mail/mobile number and hashing to verify the data."""
+
+app = FastAPI(title="pydhaar",version="0.0.1",description=description,contact={
+        "name": "Kanishk Sachdev",
+        "email": "kanishksachdev@gmail.com",
+    })
 
 
 
