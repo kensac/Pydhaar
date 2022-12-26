@@ -13,7 +13,7 @@ class AadharCard:
         self.delimeterIndex = [-1]
         self.data = {}
 
-        if isinstance(self.base10data,int):
+        if isinstance(self.base10data,str):
             self.base10data=int(self.base10data)
         
         self._base10_to_bytesArray()
@@ -27,6 +27,7 @@ class AadharCard:
         self.mobile=False
 
         self._verify_email_mobile_status()
+        self._get_version()
 
     def __str__(self) -> json:
         return json.dumps(self.data)
@@ -58,6 +59,8 @@ class AadharCard:
         elif self.data['email_mobile_status'] == "1":
             self.email=True
     
+    def _get_version(self) -> None:
+        self.version=self.decompressedBytesArray[0:2].decode("ISO-8859-1")
     #Return Functions
 
     def getAadharData(self) -> dict:
@@ -121,3 +124,6 @@ class AadharCard:
     
     def isEmail(self) -> bool:
         return self.email
+
+    def getVersion(self) -> str:
+        return self.version
