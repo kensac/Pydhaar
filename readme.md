@@ -6,6 +6,8 @@ on the Aadhaar card by the UIDAI. The library has features to deocde the informa
 demographic data. There are also features to verify user data by taking in the e-mail/mobile number
 and hashing to verify the data. Based on authentication documentaion from [https://uidai.gov.in/images/resource/User_manulal_QR_Code_15032019.pdf]()
 
+Also includes API that allows the user to fetch data from preexisting qrcode information allowing user to primarily verify validity of the information provided by hash comparision.
+
 
 
 ## Installation and Usage
