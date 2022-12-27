@@ -19,3 +19,10 @@ from pydhaar import AadharCard
 instance = AadharCard({data from QR Code})
 print(instance)
 ```
+To use API Locally, run server using 
+```bash
+uvicorn API:app --reload
+```
+Then access documentation at [http://127.0.0.1:8000/docs#/]() or [http://127.0.0.1:8000/redoc]()
+
+The API has only get requests as storage of data to a server is restricted to essential information only based on authentication documntation by UIDAI
